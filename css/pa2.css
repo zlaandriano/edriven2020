@@ -1,0 +1,16 @@
+#tableCal {
+  width: 50%;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
+  color: #000000;
+}
+
+#tableCal td, th{
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 5px;
+  text-align: center;
+}
