@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparatory Assement #3</title>
+</head>
+<style>
+    *{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    input{
+        text-align: right;
+        margin-bottom: 5px;
+    }
+    div{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    label{
+        padding-left: 5px;
+    }
+    #subm{
+        width: 155px;
+        height: 35px;
+        color: black;
+        background-color: #ff6961;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div>
+        <form action="">
+            <input type="number" id="subt" placeholder="Subtotal"><label for="Subtotal"> User Input from 100 to 10,000</label>
+            <br>
+            <input type="text" id="tax" placeholder="Tax" disabled="true"><label for="tax"> +12% Tax</label>
+            <br>
+            <input type="text" id="total" placeholder="Total" disabled="true"><label for="total"> Subtotal + Tax</label>
+            <br>
+            <input type="number" id="amtp" placeholder="Amount Paid" disabled="true"><label for="amtp"> Minimum is base on Subtotal + Tax</label>
+            <br>
+            <input type="text" id="change" placeholder="Change" disabled="true"><label for="change"> Amount Paid - Total</label>
+            <br>
+            <button type="subm" id="subm" disabled="true">Pay</button>
+        </form>
+    </div>
+</body>
+<script>
+    var subt = document.getElementById("subt");
+    var tax = document.getElementById("tax");
+    var total = document.getElementById("total");
+    var amtp = document.getElementById("amtp");
+    var change = document.getElementById("change");
+    var subm = document.getElementById("subm");
+
+    subt.addEventListener("change", function(){
+        if(parseInt(subt.value) >= 100 && parseInt(subt.value) <= 10000){
+            tax.value = (subt.value * 0.12).toFixed(2);
+            total.value = (parseInt(tax.value) + parseInt(subt.value)).toFixed(2);
+            amtp.value = total.value;
+            amtp.min = total.value;
+            change.value = (parseInt(amtp.value) - parseInt(total.value)).toFixed(2);
+            amtp.disabled = false;
+            subm.disabled = false;
+            subm.style.backgroundColor = "#00C100";
+            subm.style.color = "white";
+        }else{
+            amtp.disabled = true;
+            subm.disabled = true;
+            subm.style.backgroundColor = "#ff6961";
+            subm.style.color = "black";
+        }
+    })
+    amtp.addEventListener("change", function(){
+        change.value = (parseInt(amtp.value) - parseInt(total.value)).toFixed(2);
+        if(parseInt(change.value) >= 0){
+            subm.disabled = false;
+            subm.style.backgroundColor = "#00C100";
+            subm.style.color = "white";
+        }else{
+            subm.disabled = true;
+            subm.style.backgroundColor = "#ff6961";
+            subm.style.color = "black";
+        }
+    })
+</script>
+</html>
