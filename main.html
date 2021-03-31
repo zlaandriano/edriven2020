@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA-2021 | Main Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    
+</head>
+<body style="background-color: #5a0e05">
+    <div id="navbar">
+        <div style="display: flex;">
+            <h3 class="navicon"><a href="home.html"><img src="img/char.png" style="width: 200px;"></a></h3>
+            <h3 class="navtext"><a href="home.html">Home</a></h3>
+            <h3 class="navtext">Contacts</h3>
+        </div> 
+    </div>
+
+    <div class="container mt-4">
+      <button type="button" class="btn btn-danger mb-2" style="float: left;" data-bs-toggle="modal" data-bs-target="#newCustomer";>Add</button>
+
+          <div class="modal fade" id="newCustomer" data-bs-backdrop="static" style="padding-right: 500px; padding-top: 200px;" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newCustomerLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content" style="width: 850px; background-color: #313537">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newCustomerLabel" style="color: white;">New Order</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                      <input type="text" class="form-control" style="padding-left: 5px;" placeholder="OR Number" style="width: 20%;" id="ORNumber">
+                      <input type="text" class="form-control" style="padding-left: 5px;" placeholder="Customer Name (must have a First Name and Last Name)" id="customerName" style="width: 70%;">            
+                  </form>
+                </div>
+                <div class="modal-body">
+                    <hr style="margin-top : 0;">
+                  <form action="">
+                      <h3 class="itemTxt">Items</h3>
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item1" id="item1" style="height: 100%;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Price" id="p1" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="q1" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal1" disabled>
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item2" id="item2" style="height: 100%;" disabled>
+                                <option value="" selected disabled> </option>
+                             
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Price" id="p2" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="q2" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal2" disabled>
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item3" id="item3" style="height: 100%;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Price" id="p3" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="q3" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal3" disabled >
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item4" id="item4" style="height: 100%;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Price" id="p4" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="q4" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal4" disabled>
+                          </div>
+                      </div>       
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="save" style=" font-weight: bold;" disabled data-bs-dismiss="modal">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <table class="table table-hover" id="displayTable" style="background-color: #313537; color: white;">
+              <tr class="tableItems" style="color: white; background-color: #903d2b;" >
+                  <th scope="row" class="text-center">#</th>
+                  <th scope="row" class="text-center">Order #</th>
+                  <th scope="row" class="text-center">Customer Name</th>
+                  <th scope="row" class="text-center">Total</th>
+                  <th scope="row" class="text-center">Actions</th>
+              </tr>
+          </table>
+          
+          <div class="modal fade" id="viewItem" tabindex="-1" aria-labelledby="viewItemLabel" aria-hidden="true" style="padding-right: 500px;">
+            <div class="modal-dialog">
+              <div class="modal-content" style="width: 900px; background-color: #313537">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewItemLabel" style="color: white;">View Order</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <input type="text" class="form-control" placeholder="OR Number" style="width: 100%;" id="ORNumberView" disabled>
+                    <input type="text" class="form-control" placeholder="Customer Name" id="customerNameView" disabled>            
+                  </form>                  
+                </div>
+
+          <div class="modal-body">
+            <hr>
+              <h3 style="color: white;">Items</h3>
+              <div class="container">
+                <div class="row" id="viewItemBody" style="width: 100%; justify-content: space-around; align-items: center; display: flex;">
+                                      
+                </div>
+              </div>
+              <br>
+              <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/table.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/order.js"></script>
+    
+</body>
+</html>

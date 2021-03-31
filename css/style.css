@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#header{
+    align-items: center;
+}
+h1{
+    text-align: center;
+    color: #333;
+}
+h2{
+    text-align: center;
+    color: #FF3D33;
+    font-weight: 1500;
+}

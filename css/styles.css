@@ -1,17 +1,97 @@
-*{
+* {
+    padding: 0;
     margin: 0;
-    padding: 10px;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#header{
+/* main */
+#navbar{
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #903d2b; 
+    height: 70px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navicon{
+    margin-top: 17px; 
+    margin-left: 15px;
+}
+
+.navtext{
+    margin-top: 26px; 
+    margin-left: 15px; 
+    color: white; 
+    font-family: 'Segoe UI'; 
+    font-size: 18px;
+}
+.navtext:hover{
+    color: #fecc00;
+    cursor: pointer;
+}
+#navbar .navtext a:hover{
+    color: #fecc00;
+}
+
+a:link, a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+td {
+    color: white;
+}
+
+.itemTxt {
+    color:white 
+}
+
+.tableItems {
+    color: white;
+}
+
+/* home */
+.center{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.media{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#fb, #tw, #gh{
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+}
+#fb:hover, #tw:hover, #gh:hover{
+    color: #c2243e;
+}
+.btnalgn{
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
-h1{
-    text-align: center;
-    color: #333;
+
+.button{
+    border: none;
+    border-color: none;
+    border-radius: 10px;
+    outline: none;
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
 }
-h2{
-    text-align: center;
-    color: #FF3D33;
-    font-weight: 1500;
+.button:hover{
+    background-color: #c2243e;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
